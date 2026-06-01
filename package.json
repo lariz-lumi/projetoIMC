@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "name": "projetoimc",
+  "version": "1.0.0",
+  "description": "Projeto avaliativo Sistemas de Computação Prof - Sergio",
+  "main": "index.js",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14",
+    "selenium-webdriver": "^4.44.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lariz-lumi/projetoIMC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lariz-lumi/projetoIMC/issues"
+  },
+  "homepage": "https://github.com/lariz-lumi/projetoIMC#readme"
+}
