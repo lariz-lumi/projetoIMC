@@ -1,11 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path')
 const { calcularIMC } = require('./funcao');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use(
+    express.static(
+        path.join(__dirname, 'public')
+    )
+)
 
 app.get('/health', (req, res) => {
     res.json({
@@ -37,7 +44,7 @@ app.post('/api/calcular', (req, res) => {
         const resultado = calcularIMC(peso, altura);
 
         return res.status(200).json({
-            sucess: true,
+            success: true,
             data: resultado
         });
 
@@ -45,7 +52,7 @@ app.post('/api/calcular', (req, res) => {
         console.log(err);
 
         return res.status(400).json({
-            sucess: false,
+            success: false,
             data: 'Erro'
         });
     }

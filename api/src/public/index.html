@@ -68,7 +68,7 @@
             font-size: 16px;
         }
 
-      
+
 
         .resultado {
             margin-top: 20px;
@@ -111,7 +111,7 @@
 
         <div class="campo">
             <label for="altura">Altura (m)</label>
-            <input type="number" step="0.01" id="altura">
+            <input type="number" id="altura">
         </div>
 
         <button id="calcular">Calcular IMC</button>
@@ -122,9 +122,44 @@
     </div>
 
     <script>
-        document.getElementById("calcular").addEventListener("click", () => {
-            document.getElementById("resultado").innerText =
-                "Aguardando integração com a API...";
+        document.getElementById("calcular").addEventListener("click", async () => {
+
+            const peso = Number(
+                document.getElementById("peso").value
+            );
+
+            const altura = Number(
+                document.getElementById("altura").value
+            );
+
+            try {
+
+                const resposta = await fetch(
+                    '/api/calcular',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            peso,
+                            altura
+                        })
+                    }
+                );
+
+                const dados = await resposta.json();
+
+                document.getElementById("resultado").innerText =
+                    JSON.stringify(dados.data);
+
+            } catch (erro) {
+
+                document.getElementById("resultado").innerText =
+                    "Erro ao calcular";
+
+            }
+
         });
 
         const cursor = document.getElementById("cursor-personalizado");
