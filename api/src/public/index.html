@@ -60,7 +60,6 @@
             width: 100%;
             padding: 12px;
             background-color: lightblue;
-
             color: black;
             border: none;
             border-radius: 8px;
@@ -88,7 +87,6 @@
         #cursor-personalizado {
             position: fixed;
             width: 50px;
-            /* ajuste o tamanho */
             height: 50px;
             pointer-events: none;
             z-index: 99999;
@@ -150,20 +148,15 @@
 
                 const dados = await resposta.json();
 
-                document.getElementById("resultado").innerText =
-                    JSON.stringify(dados.data);
+                document.getElementById("resultado").innerText = JSON.stringify(dados.data);
 
             } catch (erro) {
-
-                document.getElementById("resultado").innerText =
-                    "Erro ao calcular";
-
+                document.getElementById("resultado").innerText = "Erro ao calcular";
             }
 
         });
 
         const cursor = document.getElementById("cursor-personalizado");
-
         document.addEventListener("mousemove", function (event) {
             cursor.style.left = event.clientX + "px";
             cursor.style.top = event.clientY + "px";

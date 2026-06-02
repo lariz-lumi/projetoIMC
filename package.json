@@ -1,13 +1,12 @@
 {
-  "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.2.1"
-  },
   "name": "projetoimc",
   "version": "1.0.0",
   "description": "Projeto avaliativo Sistemas de Computação Prof - Sergio",
   "main": "index.js",
   "devDependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "helmet": "^8.2.0",
     "jest": "^30.4.2",
     "nodemon": "^3.1.14",
     "selenium-webdriver": "^4.44.0"
