@@ -54,11 +54,11 @@ async function main() {
 
         await driver
             .findElement(By.id('peso'))
-            .sendKeys('78');
+            .sendKeys('55');
 
         await driver
             .findElement(By.id('altura'))
-            .sendKeys('1.70');
+            .sendKeys('1.67');
 
         await tiraFoto('dados_preenchidos');
 
